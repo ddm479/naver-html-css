@@ -12,6 +12,8 @@
 
         #header-center {
             width: 1130px;
+            height: 160px;
+            display: flex;
             background-color: yellow;
         }
 
@@ -23,12 +25,18 @@
 
         #header-logo {
             width: 222px;
-            height: 52px;
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
 
         #header-search {
             width: 586px;
-            height: 56px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            /* 형제들의 너비(우선적임)값을 뺀 나머지 차지할 수 있는 최대한의 너비로 늘어난다. */
         }
     </style>
 </head>
@@ -38,14 +46,12 @@
         <div id="header-center">
             <div id="header-logo">
                 <div>로고</div>
-
             </div>
             <div id="header-search">
                 <div>검색창</div>
             </div>
             <div id="header-home">네이버를 시작페이지로</div>
         </div>
-        <div>test</div>
     </div>
 </body>
 
