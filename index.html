@@ -73,6 +73,7 @@
             --color_shop: #9858f5;
             --color_shop_rgb: 152, 88, 245
         }
+
         html,
         body {
             margin: 0;
@@ -86,6 +87,7 @@
 
         #wrap-center {
             display: inline-block;
+            /* 중앙 정렬위함 */
             width: 1280px;
             background-color: yellow;
         }
@@ -96,28 +98,46 @@
         }
 
         #header-hamburger {
-            position:absolute;
+            position: absolute;
             top: 18px;
             left: -10px;
-            padding: 8px;
+            padding: 10px;
             display: inline-block;
+            /* 왼쪽 정렬 위함 */
+
             /* button 기본 css 제거용 */
             background: none;
             border: none;
             cursor: pointer;
             /*  */
         }
-        #header-hamburger:hover {
+
+        #header-hamburger:hover::before {
+            position: absolute;
+            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-hamburger가 된다.  */
+            content: '';
+            z-index: 0;
+            /* 형제끼리만 우열을 가림 */
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
             background-color: var(--color_option_bg);
             border-radius: 50%;
         }
+
+
+
         #header-hamburger>div {
             background-image: url(./sp_main.png);
             background-size: 468px 456px;
             background-position: -311px -151px;
             background-repeat: no-repeat;
-            width: 32px;
-            height: 32px;
+            position: relative;
+            /* z-index는 position: static 금지 */
+            z-index: 1;
+            width: 26px;
+            height: 26px;
         }
 
         #main {
@@ -131,7 +151,9 @@
         <div id="wrap-center">
             <div id="header">
                 <button id="header-hamburger">
+                    <!-- ::before -->
                     <div></div>
+                    <!-- ::after -->
                 </button>
             </div>
             <div id="search"></div>
