@@ -7,6 +7,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <title>Naver</title>
     <style>
+        /* 
+        ctrl + D : 하나씩 추가
+        ctrl + shift + L : 전부 선택
+        */
         :root {
             --color_title: #080808;
             --color_title_rgb: 8, 8, 8;
@@ -99,9 +103,9 @@
 
         #header-hamburger {
             position: absolute;
-            top: 18px;
-            left: -10px;
-            padding: 10px;
+            top: 5px;
+            left: -12px;
+            padding: 8px;
             display: inline-block;
             /* 왼쪽 정렬 위함 */
 
@@ -126,8 +130,6 @@
             border-radius: 50%;
         }
 
-
-
         #header-hamburger>div {
             background-image: url(./sp_main.png);
             background-size: 468px 456px;
@@ -136,8 +138,90 @@
             position: relative;
             /* z-index는 position: static 금지 */
             z-index: 1;
-            width: 26px;
-            height: 26px;
+            width: 32px;
+            height: 32px;
+        }
+
+        #header-naverpay {
+            position: absolute;
+            top: 5px;
+            left: 41px;
+            padding: 8px;
+            display: inline-block;
+            /* 왼쪽 정렬 위함 */
+
+            /* button 기본 css 제거용 */
+            background: none;
+            border: none;
+            cursor: pointer;
+            /*  */
+        }
+
+        #header-naverpay:hover::before {
+            position: absolute;
+            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-hamburger가 된다.  */
+            content: '';
+            z-index: 0;
+            /* 형제끼리만 우열을 가림 */
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
+            background-color: var(--color_option_bg);
+            border-radius: 50%;
+        }
+
+        #header-naverpay>div {
+            background-image: url(./sp_main.png);
+            background-size: 468px 456px;
+            background-position: 0px -318px;
+            background-repeat: no-repeat;
+            position: relative;
+            /* z-index는 position: static 금지 */
+            z-index: 1;
+            width: 32px;
+            height: 32px;
+        }
+
+        #header-notice {
+            position: absolute;
+            top: 5px;
+            right: 42px;
+            padding: 8px;
+            display: inline-block;
+            /* 왼쪽 정렬 위함 */
+
+            /* button 기본 css 제거용 */
+            background: none;
+            border: none;
+            cursor: pointer;
+            /*  */
+        }
+
+        #header-notice:hover::before {
+            position: absolute;
+            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-hamburger가 된다.  */
+            content: '';
+            z-index: 0;
+            /* 형제끼리만 우열을 가림 */
+            left: 1px;
+            top: 1px;
+            width: 44px;
+            height: 44px;
+            background-color: var(--color_option_bg);
+            border-radius: 50%;
+        }
+
+        #header-notice>div {
+            background-image: url(./sp_main.png);
+            background-size: 468px 456px;
+            background-position: -311px -217px;
+            background-repeat: no-repeat;
+            position: relative;
+            /* z-index는 position: static 금지 */
+            z-index: 1;
+            width: 32px;
+            height: 32px;
         }
 
         #main {
@@ -151,6 +235,16 @@
         <div id="wrap-center">
             <div id="header">
                 <button id="header-hamburger">
+                    <!-- ::before -->
+                    <div></div>
+                    <!-- ::after -->
+                </button>
+                <button id="header-naverpay">
+                    <!-- ::before -->
+                    <div></div>
+                    <!-- ::after -->
+                </button>
+                <button id="header-notice">
                     <!-- ::before -->
                     <div></div>
                     <!-- ::after -->
