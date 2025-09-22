@@ -100,14 +100,12 @@
             text-align: left;
             position: relative;
         }
-
-        #header-hamburger {
+        #header-hamburger, #header-naverpay, #header-navertalk, #header-notice, #header-shopping {
             position: absolute;
             top: 5px;
-            left: -12px;
             padding: 8px;
             display: inline-block;
-            /* 왼쪽 정렬 위함, 하지만 text-align보다 (absolute, top, left)가 우선적으로 적용된다. 그래서 하단부터는 제외함 */
+            /* 왼쪽 정렬 위함, 하지만 text-align보다 (absolute, top, left)가 우선적으로 적용된다.  */
 
             /* button 기본 css 제거용 */
             background: none;
@@ -115,10 +113,9 @@
             cursor: pointer;
             /*  */
         }
-
-        #header-hamburger:hover::before {
+        #header-hamburger:hover::before, #header-naverpay:hover::before, #header-navertalk:hover::before, #header-notice:hover::before, #header-shopping:hover::before {
             position: absolute;
-            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-hamburger가 된다. */
+            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-x(변수)가 된다. */
             content: '';
             z-index: 0;
             /* 형제끼리만 우열을 가림 */
@@ -128,6 +125,10 @@
             height: 48px;
             background-color: var(--color_option_bg);
             border-radius: 50%;
+        }
+
+        #header-hamburger {
+            left: -12px;
         }
 
         #header-hamburger>div {
@@ -143,30 +144,7 @@
         }
 
         #header-naverpay {
-            position: absolute;
-            top: 5px;
             left: 41px;
-            padding: 8px;
-
-            /* button 기본 css 제거용 */
-            background: none;
-            border: none;
-            cursor: pointer;
-            /*  */
-        }
-
-        #header-naverpay:hover::before {
-            position: absolute;
-            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-naverpay가 된다. */
-            content: '';
-            z-index: 0;
-            /* 형제끼리만 우열을 가림 */
-            left: 0;
-            top: 0;
-            width: 48px;
-            height: 48px;
-            background-color: var(--color_option_bg);
-            border-radius: 50%;
         }
 
         #header-naverpay>div {
@@ -182,30 +160,7 @@
         }
 
         #header-navertalk {
-            position: absolute;
-            top: 5px;
             right: 94px;
-            padding: 8px;
-
-            /* button 기본 css 제거용 */
-            background: none;
-            border: none;
-            cursor: pointer;
-            /*  */
-        }
-
-        #header-navertalk:hover::before {
-            position: absolute;
-            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-navertalk가 된다.  */
-            content: '';
-            z-index: 0;
-            /* 형제끼리만 우열을 가림 */
-            left: 0;
-            top: 0;
-            width: 48px;
-            height: 48px;
-            background-color: var(--color_option_bg);
-            border-radius: 50%;
         }
 
         #header-navertalk>div {
@@ -221,30 +176,7 @@
         }
 
         #header-notice {
-            position: absolute;
-            top: 5px;
             right: 42px;
-            padding: 8px;
-
-            /* button 기본 css 제거용 */
-            background: none;
-            border: none;
-            cursor: pointer;
-            /*  */
-        }
-
-        #header-notice:hover::before {
-            position: absolute;
-            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-notice가 된다.  */
-            content: '';
-            z-index: 0;
-            /* 형제끼리만 우열을 가림 */
-            left: 0;
-            top: 0;
-            width: 48px;
-            height: 48px;
-            background-color: var(--color_option_bg);
-            border-radius: 50%;
         }
 
         #header-notice>div {
@@ -260,30 +192,7 @@
         }
 
         #header-shopping {
-            position: absolute;
-            top: 5px;
-            right: -10px;
-            padding: 8px;
-
-            /* button 기본 css 제거용 */
-            background: none;
-            border: none;
-            cursor: pointer;
-            /*  */
-        }
-
-        #header-shopping:hover::before {
-            position: absolute;
-            /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-shopping이 된다.  */
-            content: '';
-            z-index: 0;
-            /* 형제끼리만 우열을 가림 */
-            left: 0;
-            top: 0;
-            width: 48px;
-            height: 48px;
-            background-color: var(--color_option_bg);
-            border-radius: 50%;
+            right: -10px; 
         }
 
         #header-shopping>div {
