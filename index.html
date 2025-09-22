@@ -84,6 +84,20 @@
             padding: 0;
         }
 
+        /* 
+        클래스는 여러 번 쓰일 경우 사용
+        id는 한 번 쓰일 것 같은 경우 사용        
+        */
+        /* 시각 장애인을 위해 웹 컨텐츠를 읽어주는 용도 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
         #wrap {
             text-align: center;
             /* block요소의 자식 요소 중에서 inline이나 텍스트만 중앙 정렬시킴 */
@@ -100,7 +114,12 @@
             text-align: left;
             position: relative;
         }
-        #header-hamburger, #header-naverpay, #header-navertalk, #header-notice, #header-shopping {
+
+        #header-hamburger,
+        #header-naverpay,
+        #header-navertalk,
+        #header-notice,
+        #header-shopping {
             position: absolute;
             top: 5px;
             padding: 8px;
@@ -113,7 +132,12 @@
             cursor: pointer;
             /*  */
         }
-        #header-hamburger:hover::before, #header-naverpay:hover::before, #header-navertalk:hover::before, #header-notice:hover::before, #header-shopping:hover::before {
+
+        #header-hamburger:hover::before,
+        #header-naverpay:hover::before,
+        #header-navertalk:hover::before,
+        #header-notice:hover::before,
+        #header-shopping:hover::before {
             position: absolute;
             /* 이 가상요소의 기준점은 가장 근접한 부모요소인 #header-x(변수)가 된다. */
             content: '';
@@ -127,20 +151,27 @@
             border-radius: 50%;
         }
 
-        #header-hamburger {
-            left: -12px;
-        }
-
-        #header-hamburger>div {
+        #header-hamburger>div,
+        #header-naverpay>div,
+        #header-navertalk>div,
+        #header-notice>div,
+        #header-shopping>div {
             background-image: url(./sp_main.png);
             background-size: 468px 456px;
-            background-position: -311px -151px;
             background-repeat: no-repeat;
             position: relative;
             /* z-index는 position: static 금지 */
             z-index: 1;
             width: 32px;
             height: 32px;
+        }
+
+        #header-hamburger {
+            left: -12px;
+        }
+
+        #header-hamburger>div {
+            background-position: -311px -151px;
         }
 
         #header-naverpay {
@@ -148,15 +179,7 @@
         }
 
         #header-naverpay>div {
-            background-image: url(./sp_main.png);
-            background-size: 468px 456px;
             background-position: 0px -318px;
-            background-repeat: no-repeat;
-            position: relative;
-            /* z-index는 position: static 금지 */
-            z-index: 1;
-            width: 32px;
-            height: 32px;
         }
 
         #header-navertalk {
@@ -164,15 +187,7 @@
         }
 
         #header-navertalk>div {
-            background-image: url(./sp_main.png);
-            background-size: 468px 456px;
-            background-position: -132px -318px  ;
-            background-repeat: no-repeat;
-            position: relative;
-            /* z-index는 position: static 금지 */
-            z-index: 1;
-            width: 32px;
-            height: 32px;
+            background-position: -132px -318px;
         }
 
         #header-notice {
@@ -180,31 +195,15 @@
         }
 
         #header-notice>div {
-            background-image: url(./sp_main.png);
-            background-size: 468px 456px;
             background-position: -311px -217px;
-            background-repeat: no-repeat;
-            position: relative;
-            /* z-index는 position: static 금지 */
-            z-index: 1;
-            width: 32px;
-            height: 32px;
         }
 
         #header-shopping {
-            right: -10px; 
+            right: -10px;
         }
 
         #header-shopping>div {
-            background-image: url(./sp_main.png);
-            background-size: 468px 456px;
             background-position: -66px -318px;
-            background-repeat: no-repeat;
-            position: relative;
-            /* z-index는 position: static 금지 */
-            z-index: 1;
-            width: 32px;
-            height: 32px;
         }
 
         #main {
@@ -220,30 +219,42 @@
                 <button id="header-hamburger">
                     <!-- ::before -->
                     <div></div>
+                    <span class="blind">확장 영역</span>
                     <!-- ::after -->
                 </button>
                 <button id="header-naverpay">
                     <!-- ::before -->
                     <div></div>
+                    <span class="blind">네이버 페이</span>
                     <!-- ::after -->
                 </button>
                 <button id="header-navertalk">
                     <!-- ::before -->
                     <div></div>
+                    <span class="blind">네이버 톡</span>
                     <!-- ::after -->
                 </button>
                 <button id="header-notice">
                     <!-- ::before -->
                     <div></div>
+                    <span class="blind">알림</span>
                     <!-- ::after -->
                 </button>
                 <button id="header-shopping">
                     <!-- ::before -->
                     <div></div>
+                    <span class="blind">네이버 쇼핑</span>
                     <!-- ::after -->
                 </button>
             </div>
-            <div id="search"></div>
+            <div id="search">
+                <form action="">
+                    <label for="search-input" class="blind">검색어 입력</label>
+                    <!-- form 태그 안에서 입력받고 label과 input 연결하면 좋다 -->
+                    <input id="search-input" type="text" />
+                    <button class="blind">검색</button>
+                </form>
+            </div>
             <div id="nav"></div>
             <div id="main"></div>
         </div>
