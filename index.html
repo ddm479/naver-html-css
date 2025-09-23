@@ -78,8 +78,15 @@
             --color_shop_rgb: 152, 88, 245
         }
 
+        /* 일반적인 관행 */
+        * {
+            box-sizing: border-box;
+            /* width와 height 속성값이 콘텐츠, 패딩, 보더를 모두 포함한 요소의 전체 크기를 의미합니다. 따라서 패딩이나 보더를 추가하더라도 요소의 전체 크기는 변하지 않습니다.*/
+        }
+
         html,
-        body {
+        body,
+        form {
             margin: 0;
             padding: 0;
         }
@@ -113,6 +120,7 @@
         #header {
             text-align: left;
             position: relative;
+            height: 52px;
         }
 
         #header-hamburger,
@@ -247,6 +255,24 @@
                     <!-- ::after -->
                 </button>
             </div>
+            <style>
+                /* 코드가 길어져서 개발하는 동안에만 편의 상 body태그 안에 css 넣기, 나중에 header 태그에 자동으로 넣어주는 도구가 있다.*/
+                #search>form {
+                    display: inline-block;
+                    /* text-align 중앙정렬위함 */
+                    width: 708px;
+                    height: 60px;
+                    border: 1px solid #03c75a;
+                    border-radius: 33px;
+                }
+
+                #search>form>input {
+                    width: 480px;
+                    height: 100%;
+                    /* border-box와 100%로 부모의 content 크기 값(58px)으로 설정 된다 */
+                    padding: 17px 0;
+                }
+            </style>
             <div id="search">
                 <form action="">
                     <label for="search-input" class="blind">검색어 입력</label>
