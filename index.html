@@ -258,8 +258,9 @@
             <style>
                 /* 코드가 길어져서 개발하는 동안에만 편의 상 body태그 안에 css 넣기, 나중에 header 태그에 자동으로 넣어주는 도구가 있다.*/
                 #search>form {
-                    display: inline-block;
-                    /* text-align 중앙정렬위함 */
+                    display: inline-flex; 
+                    /* inline-block의 남는 공간 문제 flex로 해결 */
+                    /* 1. block과 inline-block 100% 차이 알아볼 것 */
                     width: 708px;
                     height: 60px;
                     border: 1px solid #03c75a;
@@ -269,16 +270,76 @@
                 }
 
                 #search-svg {
-                    display: inline-block;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 68px;
                     margin-right: 12px;
                     height: 100%;
                     padding-left: 10px;
                 }
+                #search-svg svg{
+                    width: 24px;
+                    height: 24px;
+                    fill: #03c75a; /* svg파일을 해당 색상으로 보이게 함*/
+                }
 
                 #search-input {
                     width: 480px;
                     padding: 17px 0;
+                    /* 3. 수정하기 */
+                    font-size: 1.5rem; 
+                    line-height: 24px;
+                    font-weight: bold;
+                    border: none;
+                    outline: none;
+                }
+                /* placeholder 색상 바꾸기 2-3 6분8초부터*/
+                #search-input::placeholder {
+                    color: white;
+                }
+
+                #search-right {
+                    display: flex;
+                    flex: 1;
+                    /* 전체 width에서 형제들 width를 뺀 남는 공간에서 최대한으로 늘린다. */
+                    align-items: stretch;
+                    justify-content: flex-end;
+                }
+                #search-keyboard, #search-recent, #search-button {
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+                /*  2. 아이콘 추가할 것 */
+                #search-keyboard::before {
+
+                }
+                /* 기존 거를 바꾸는 거는 항상 아래에 작성하자! */
+                #search-keyboard:hover::before {
+                    filter: brightness(0.7); /* 밝기를 70%로 변경 */
+                }
+
+                #search-recent::before {
+
+                }
+                #search-button {
+                    padding: 17px 27px 16px 10px;
+                }
+                #search-button > div{
+                    background: #03c75a;
+                    height: 25px;
+                    height: 25px;
+                }
+                #search-button > div::before {
+                    content: "";
+                    display: block;
+                    background-image: url(./sp_main.png);
+                    background-size: 468px 456px;
+                    background-position: -66px -318px;
+                    background-repeat: no-repeat;
+                    width: 25px;
+                    height: 25px;
                 }
             </style>
             <div id="search">
@@ -288,7 +349,9 @@
                             <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
                         </svg>
                         <!-- svg는 아무리 확대해도 깨지지 않는 이미지이다 -->
+                         x
                     </a>
+                    <!-- inline-block의 문제점: a 태그 label 태그 input 태그 서로 붙이지 않고 enter로 줄 나누면 브라우저에서 약간의 공간이 남는다. -> flex로 해결하면 된다. -->
                     <label for="search-input" class="blind">검색어 입력</label>
                     <!-- form 태그 안에서 입력받고 label과 input 연결하면 좋다 -->
                     <input id="search-input" type="text" placeholder="검색어를 입력하세요." />
