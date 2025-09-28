@@ -85,8 +85,17 @@
         }
 
         html,
-        body,
-        form {
+        body {
+            font-size: 10.5px;
+            line-height: 10.5px;
+            margin: 0;
+            padding: 0;
+            letter-spacing: -0.4px;
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+        }
+
+        form,
+        ul {
             margin: 0;
             padding: 0;
         }
@@ -114,7 +123,6 @@
             display: inline-block;
             /* 중앙 정렬위함 */
             width: 1280px;
-            background-color: yellow;
         }
 
         #header {
@@ -165,7 +173,7 @@
         #header-notice>div,
         #header-shopping>div {
             background-image: url(./sp_main.png);
-            background-size: 468px 456px;
+            background-size: 468px 457px;
             background-repeat: no-repeat;
             position: relative;
             /* z-index는 position: static 금지 */
@@ -258,9 +266,8 @@
             <style>
                 /* 코드가 길어져서 개발하는 동안에만 편의 상 body태그 안에 css 넣기, 나중에 header 태그에 자동으로 넣어주는 도구가 있다.*/
                 #search>form {
-                    display: inline-flex; 
+                    display: inline-flex;
                     /* inline-block의 남는 공간 문제 flex로 해결 */
-                    /* 1. block과 inline-block 100% 차이 알아볼 것 */
                     width: 708px;
                     height: 60px;
                     border: 1px solid #03c75a;
@@ -269,34 +276,45 @@
                     /* 자식 중 인라인이나 텍스트 왼쪽 정렬 */
                 }
 
+                #search>form:hover {
+                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12);
+                }
+
                 #search-svg {
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
                     width: 68px;
-                    margin-right: 12px;
                     height: 100%;
-                    padding-left: 10px;
+                    /* 부모의 height에서 border 2px를 뺀 58px을 받음 */
+                    padding: 17px 16px 17px 27px;
                 }
-                #search-svg svg{
+
+                #search-svg svg {
                     width: 24px;
                     height: 24px;
-                    fill: #03c75a; /* svg파일을 해당 색상으로 보이게 함*/
+                    fill: #03c75a;
+                    /* svg파일을 해당 색상으로 보이게 함*/
                 }
 
                 #search-input {
                     width: 480px;
                     padding: 17px 0;
                     /* 3. 수정하기 */
-                    font-size: 1.5rem; 
+                    font-size: 2rem;
                     line-height: 24px;
                     font-weight: bold;
                     border: none;
                     outline: none;
                 }
-                /* placeholder 색상 바꾸기 2-3 6분8초부터*/
+
+                /* placeholder 흰색으로 설정해서 안 보이게 하기 */
                 #search-input::placeholder {
                     color: white;
+                }
+
+                #search-input:focus::placeholder {
+                    color: #e4e4e4;
                 }
 
                 #search-right {
@@ -306,32 +324,55 @@
                     align-items: stretch;
                     justify-content: flex-end;
                 }
-                #search-keyboard, #search-recent, #search-button {
+
+                #search-keyboard,
+                #search-recent,
+                #search-button {
                     background: transparent;
                     border: none;
                     cursor: pointer;
                 }
-                /*  2. 아이콘 추가할 것 */
-                #search-keyboard::before {
 
+                #search-keyboard::before {
+                    content: "";
+                    display: block;
+                    background-image: url(./sp_main.png);
+                    background-size: 468px 457px;
+                    background-position: -273px -279px;
+                    background-repeat: no-repeat;
+                    width: 24px;
+                    height: 14px;
                 }
+
                 /* 기존 거를 바꾸는 거는 항상 아래에 작성하자! */
                 #search-keyboard:hover::before {
-                    filter: brightness(0.7); /* 밝기를 70%로 변경 */
+                    filter: brightness(0.7);
+                    /* 밝기를 70%로 변경 */
                 }
 
                 #search-recent::before {
-
+                    content: "";
+                    display: block;
+                    background-image: url(./sp_main.png);
+                    background-size: 468px 457px;
+                    background-position: -457px -411px;
+                    background-repeat: no-repeat;
+                    width: 10px;
+                    height: 6px;
                 }
+
                 #search-button {
                     padding: 17px 27px 16px 10px;
                 }
-                #search-button > div{
-                    background: #03c75a;
-                    height: 25px;
+
+                #search-button>svg {
+                    /* background: #03c75a; 현재는 fill 속성이 html태그에 있음*/
+                    width: 25px;
                     height: 25px;
                 }
-                #search-button > div::before {
+
+                /*  강의랑 다른 부분 */
+                /* #search-button>div::before {
                     content: "";
                     display: block;
                     background-image: url(./sp_main.png);
@@ -340,7 +381,7 @@
                     background-repeat: no-repeat;
                     width: 25px;
                     height: 25px;
-                }
+                } */
             </style>
             <div id="search">
                 <form action="">
@@ -349,7 +390,7 @@
                             <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
                         </svg>
                         <!-- svg는 아무리 확대해도 깨지지 않는 이미지이다 -->
-                         x
+
                     </a>
                     <!-- inline-block의 문제점: a 태그 label 태그 input 태그 서로 붙이지 않고 enter로 줄 나누면 브라우저에서 약간의 공간이 남는다. -> flex로 해결하면 된다. -->
                     <label for="search-input" class="blind">검색어 입력</label>
@@ -363,7 +404,15 @@
                             <span class="blind">자동완성/최근검색어펼치기</span>
                         </button>
                         <button id="search-button">
-                            <div><span class="blind">검색</span></div>
+                            <!-- <div><span class="blind">검색</span></div> -->
+                            <svg id="search-btn" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                                style="fill: #03c75a">
+                                <path
+                                    d="M22.13.5c11.378 0 20.632 9.256 20.632 20.63 0 4.699-1.566 9.155-4.439 12.782l10.164 10.165a2.41 2.41 0 0 1-1.706 4.115 2.412 2.412 0 0 1-1.706-.705L33.31 35.719a2.41 2.41 0 0 1 0-3.41 15.71 15.71 0 0 0 4.628-11.178c0-8.718-7.09-15.808-15.807-15.808-8.718 0-15.808 7.09-15.808 15.808 0 7.15 4.817 13.43 11.714 15.273a2.41 2.41 0 0 1 1.705 2.954 2.41 2.41 0 0 1-2.95 1.705C7.788 38.658 1.5 30.46 1.5 21.131 1.5 9.756 10.756.5 22.13.5zm4.716 34.746a3.483 3.483 0 1 1 0 6.966 3.483 3.483 0 0 1 0-6.966z">
+                                </path>
+                            </svg>
+                            <span class="blind">검색</span>
+
                         </button>
                     </div>
                 </form>
