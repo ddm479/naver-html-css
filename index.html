@@ -288,6 +288,24 @@
                     height: 100%;
                     /* 부모의 height에서 border 2px를 뺀 58px을 받음 */
                     padding: 17px 16px 17px 27px;
+                    position: relative;
+                    /* after의 기준점 */
+                }
+
+                /* 처음 상태 */
+                #search-svg::after {
+                    display: none;
+                }
+
+                /* form 자체뿐만 아니라 form 자식(내부요소)도 focus 받을 때 form의 자손 중 #search-svg::after css 변경*/
+                #search>form:focus-within #search-svg::after {
+                    content: '';
+                    width: 1px;
+                    height: 20px;
+                    background-color: #e4e4e4;
+                    position: absolute;
+                    right: 7px;
+                    display: inline-block;
                 }
 
                 #search-svg svg {
@@ -300,7 +318,7 @@
                 #search-input {
                     width: 480px;
                     padding: 17px 0;
-                    /* 3. 수정하기 */
+                    /* 3. 수정하기, 폰트는 나중에 */
                     font-size: 2rem;
                     line-height: 24px;
                     font-weight: bold;
@@ -344,7 +362,9 @@
                     height: 14px;
                 }
 
-                /* 기존 거를 바꾸는 거는 항상 아래에 작성하자! */
+                /* 기존 거를 바꾸는 거는 항상 아래에 작성하자!
+                -> 기본적인 거(처음 상태인 거)
+                */
                 #search-keyboard:hover::before {
                     filter: brightness(0.7);
                     /* 밝기를 70%로 변경 */
