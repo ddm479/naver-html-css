@@ -437,7 +437,201 @@
                     </div>
                 </form>
             </div>
-            <div id="nav"></div>
+            <style>
+                #nav {
+                    margin-top: 8px;
+                }
+
+                #nav>ul {
+                    display: flex;
+                    list-style-type: none;
+                    justify-content: center;
+                    font-size: 1.4rem;
+                    line-height: 20px;
+                }
+
+                #nav a {
+                    text-decoration: none;
+                }
+
+                #nav a div {
+                    width: 44px;
+                    height: 44px;
+                    margin: 0 auto;
+                    position: relative;
+                    /* before의 기준점 */
+                }
+
+                #nav a:visited {
+                    color: black;
+                }
+
+                #nav li {
+                    width: 64px;
+                    margin-left: -3px;
+                }
+
+                /* 형제들 중 다른 태그를 구별해서 카운트하지 않는다. */
+                #nav li:nth-child(1) {}
+
+                /* 형제들 중  다른 태그들을 구별해서 카운트 함. 사용 권장*/
+                #nav li:nth-of-type(1) {
+                    margin-left: 0;
+                }
+
+                /* 각 아이콘의 테두리 아이콘 */
+                #nav li a div::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: -1px;
+                    left: -3px;
+                    background-image: url(./sp_main.png);
+                    background-size: 468px 457px;
+                    background-position: -153px -142px;
+                    background-repeat: no-repeat;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                /*
+                * #nav ul li 중, 마지막에서 두 번째 요소(:nth-last-child(2))를 제외하고 스타일 적용
+                * id가 #nav인 요소 내부에 있는 리스트 중, 뒤에서 두 번째 항목(li)을 제외한 나머지 모든 항목의 a 태그 안의 div에 가상 요소(::after) 스타일을 적용.
+                */
+                #nav ul li:not(:nth-last-child(2)) a div::after {
+                    content: '';
+                    display: inline-block;
+                    background-image: url(./sp_main.png);
+                    background-size: 468px 457px;
+                    background-repeat: no-repeat;
+                    width: 40px;
+                    height: 40px;
+                    position: relative;
+                    /* z-index는 static에서 사용 못 하고 여기 서 absolute사용 시 위치가 이상해짐 */
+                    z-index: 1;
+                    /* before(테두리 아이콘)보다 위로 */
+                    margin: 2px;
+                }
+
+                #nav li:nth-of-type(1) a div::after {
+                    background-position: -205px -219px;
+                }
+
+                #nav li:nth-of-type(2) a div::after {
+                    background-position: -41px -219px;
+                }
+
+                #nav li:nth-of-type(3) a div::after {
+                    background-position: 0px -219px;
+                }
+
+                #nav li:nth-of-type(4) a div::after {
+                    background-position: -41px -260px;
+                }
+
+                #nav li:nth-of-type(5) a div::after {
+                    background-position: -270px -205px;
+                }
+
+                #nav li:nth-of-type(6) a div::after {
+                    background-position: -123px -260px;
+                }
+
+                #nav li:nth-of-type(7) a div::after {
+                    background-position: 0px -260px;
+                }
+
+                #nav li:nth-of-type(8) a div::after {
+                    background-position: -270px 0px;
+                }
+
+                #nav li:nth-of-type(9) a div::after {
+                    background-position: -164px -260px;
+                }
+
+                #nav li:nth-of-type(10) a div img {
+                    position: relative;
+                    /* z-index는 static에서 사용 못 하고 여기 서 absolute사용 시 위치가 이상해짐 */
+                    z-index: 1;
+                    /* before(테두리 아이콘)보다 위로 */
+                }
+
+                #nav li:nth-of-type(11) a div::after {
+                    background-position: -270px -164px;
+                }
+            </style>
+            <div id="nav">
+                <ul>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>메일</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>카페</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>블로그</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>스토어</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>뉴스</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>증권</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>부동산</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>지도</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span>웹툰</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div><img
+                                    src="https://s.pstatic.net/static/www/mobile/edit/20240112_1095/upload_1705057885416AaxUM.png"
+                                    width="40" height="40" class="service_img" alt="치지직"></div>
+                            <span>치지직</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div></div>
+                            <span class="blind">더보기</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div id="main"></div>
         </div>
     </div>
