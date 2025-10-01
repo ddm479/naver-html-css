@@ -446,8 +446,8 @@
                     display: flex;
                     list-style-type: none;
                     justify-content: center;
-                    font-size: 1.4rem;
-                    line-height: 20px;
+                    /* font-size: 1.4rem;
+                    line-height: 20px; */
                 }
 
                 #nav a {
@@ -477,6 +477,9 @@
                 /* 형제들 중  다른 태그들을 구별해서 카운트 함. 사용 권장*/
                 #nav li:nth-of-type(1) {
                     margin-left: 0;
+                }
+                #nav li:nth-of-type(4), #nav li:nth-of-type(9) {
+                    margin-left: -2px;
                 }
 
                 /* 각 아이콘의 테두리 아이콘 */
@@ -550,14 +553,31 @@
                 }
 
                 #nav li:nth-of-type(10) a div img {
-                    position: relative;
-                    /* z-index는 static에서 사용 못 하고 여기 서 absolute사용 시 위치가 이상해짐 */
+                    position: absolute;
+                    /* z-index는 static에서 사용 못 한다.*/
                     z-index: 1;
                     /* before(테두리 아이콘)보다 위로 */
+                    /*  */
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%); 
+                    /* 부모요소 기준 가로세로 중앙에 대칭되게 배치하기 */
                 }
 
                 #nav li:nth-of-type(11) a div::after {
                     background-position: -270px -164px;
+                }
+
+                #nav li a span {
+                    display: inline-block;
+                    /* inline일 때 수직 마진 (margin top, margin-bottom)이 적용 불가능하다. */
+                    margin-top: 4px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-size: 1.3rem;
+                    line-height: 20px;
+                    text-align: center;
                 }
             </style>
             <div id="nav">
