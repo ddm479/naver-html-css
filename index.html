@@ -713,9 +713,7 @@
                     border-radius: 8px;
                 }
 
-                #main-newstand {
-                    height: 426px;
-                }
+                /*  #main-newstand 자리 */
 
                 #main-login {
                     height: 164px;
@@ -843,12 +841,152 @@
                 aside.main-right-ad:nth-of-type(5) {
                     height: 80px;
                 }
+
+                #main-newstand {
+                    height: 426px;
+                    display: flex;
+                    flex-flow: column;
+                    /* footer를 아래에 붙게 하기 위함 */
+                }
+
+                #main-newstand-top {
+                    flex: 1;
+                    /* 아래에 공간이 남는다 -> footer를 아래에 붙이면 된다 -> #main-newstand-top 부분이 공간을 최대한 차지하게 하면 된다.  */
+                    padding: 18px 20px;
+                }
+
+                #main-newstand header {
+                    font-size: 1.6rem;
+                    color: #000000;
+                    display: flex;
+                    justify-content: start;
+                    line-height: 23px;
+                    margin-bottom: 17px;
+                }
+
+                #main-newstand header .bold {
+                    font-weight: bold;
+                    color: black;
+                }
+
+                #main-newstand-gray {
+                    display: flex;
+                    justify-content: start;
+                    height: 50px;
+                    padding: 12px 20px;
+                    border-radius: 4px;
+                    background-color: #F8F9FA;
+                }
+
+                #main-newstand a {
+                    text-decoration: none;
+                }
+
+                #main-newstand a:visited {
+                    color: inherit;
+                }
+
+                #main-newstand a:hover {
+                    text-decoration: underline;
+                }
+
+                #main-newstand-grid {
+                    width: 790px;
+                    height: 224px;
+                    display: grid;
+                    /* 격자모양에 적합하다. */
+                    /* gap을 사용하고 부모자식의 background-color를 다르게 해서 grid 내부의 경계선 효과 구현*/
+                    gap: 1px;
+                    /* 그리드 요소 사이의 간격 */
+                    background-color: #00000014;
+                    /* 결국 그리드 요소 사이만 이 색으로 채워진다. */
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+                    /* 가로가 4줄, 4개의 행을 1:1:1:1 비율로 나눈다.*/
+                    grid-template-columns: repeat(6, 1fr);
+                    /* 세로가 6칸, fr로 각 열 비율 조절*/
+                    border-radius: 4px;
+                    border: 1px solid #00000014;
+                    overflow: hidden;
+                    /* Grid 컨테이너 경계를 벗어나는 자식 요소의 내용( 지금은, 자식 항목의 background-color: white)을 잘라내어  border-radius 완성한다. */
+                    /*  */
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 18px;
+                }
+
+                /* grid 내부의 경계선 효과 구현 */
+                #main-newstand-grid>div {
+                    height: 100%;
+                    background-color: white;
+                    /* grid items(요소들) 정렬 */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #main-newstand footer {
+                    padding: 10px 0 11px;
+                }
             </style>
             <main id="main">
                 <div id="main-left">
                     <!-- 광고 -->
                     <aside id="main-left-ad"></aside>
-                    <section id="main-newstand" class="mt-16"></section>
+                    <section id="main-newstand" class="mt-16">
+                        <div id="main-newstand-top">
+                            <header>
+                                <a href="#" class="bold">뉴스스탠드</a>
+                                <a href="#">언론사편집</a>
+                                <a href="#">엔터</a>
+                                <a href="#">스포츠</a>
+                                <a href="#">경제</a>
+                                <a href="#">쇼핑투데이</a>
+
+                            </header>
+                            <div id="main-newstand-gray">
+                                <a href="#">전체언론사</a>
+                                <a href="#">연합뉴스</a>
+                                <a href="#">아이언맨 한국 입국해서 가평 계곡 일정을 잡았습니다. 닭 백숙을 먹고 엄청 놀라워해 집에 가져가고 싶다고 말해</a>
+                                <div>
+                                    <a href="#">뉴스스탠드</a>
+                                    <a href="#">뉴스홈</a>
+                                </div>
+                            </div>
+                            <div id="main-newstand-grid">
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                                <div>언론사</div>
+                            </div>
+                        </div>
+                        <footer>
+                            <button><span class="blind">이전</span></button>
+                            <div>언론사 더보기 1/4</div>
+                            <button><span class="blind">다음</span></button>
+                            <button><span class="blind">목록보기</span></button>
+                            <button><span class="blind">격자보기</span></button>
+                        </footer>
+                    </section>
                     <section id="main-shopping" class="mt-16"></section>
                 </div>
                 <div id="main-right">
