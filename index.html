@@ -855,9 +855,79 @@
                     padding: 18px 20px;
                 }
 
+                #main-newstand-top .dot,
+                #main-newstand-top .slash {
+                    color: #00000080;
+                }
+
+                /* 구분자 . 구현 */
+                #main-newstand-top .dot::before {
+                    content: '';
+                    display: inline-block;
+                    width: 4px;
+                    height: 4px;
+                    margin: 9px 7px 0;
+                    border-radius: 50%;
+                    background-color: var(--color_dot_divider);
+                    vertical-align: top;
+                }
+
+                #main-newstand-top .slash {
+                    position: relative;
+                    /* before의 기준점 */
+                    padding-left: 26px;
+                }
+
+                /* 구분자 / 구현 */
+                #main-newstand-top .slash::before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    top: 4px;
+                    left: 13px;
+                    width: 1px;
+                    height: 15px;
+                    /* 
+                    옛날 브라우저용 코드 , vendor-prefix
+                    -webkit-transform: skewX(-15deg);
+                    -ms-transform: skewX(-15deg); 
+                    */
+                    transform: skewX(-15deg);
+                    background-color: var(--color_dot_divider);
+                }
+
+                #main-newstand-top .sports-live {
+                    display: inline-block;
+                    margin: 3px 0 0 5px;
+                    padding: 0 5px 0 4px;
+                    border-radius: 9px;
+                    background-color: #F4361E;
+                    font-size: 1.1rem;
+                    line-height: 18px;
+                    font-weight: 900;
+                    vertical-align: top;
+                    color: #FFFFFF;
+                }
+
+                #main-newstand-top .sports-live::before {
+                    content: "";
+                    display: inline-block;
+                    background-image: url(./sp_main.png);
+                    background-size: 468px 457px;
+                    background-position: -352px -301px;
+                    background-repeat: no-repeat;
+                    width: 14px;
+                    height: 10px;
+                    margin: 4px 3px 0 0;
+                    /* vertical-align: top; */
+                }
+
+
                 #main-newstand header {
                     font-size: 1.6rem;
-                    color: #000000;
+                    /* color: #00000080; */
+                    /* color 왜 안먹는지 모르겟다 */
+                    font-weight: 800;
                     display: flex;
                     justify-content: start;
                     line-height: 23px;
@@ -883,7 +953,7 @@
                 }
 
                 #main-newstand a:visited {
-                    color: inherit;
+                    /* color: inherit; */
                 }
 
                 #main-newstand a:hover {
@@ -936,12 +1006,12 @@
                         <div id="main-newstand-top">
                             <header>
                                 <a href="#" class="bold">뉴스스탠드</a>
-                                <a href="#">언론사편집</a>
-                                <a href="#">엔터</a>
-                                <a href="#">스포츠</a>
-                                <a href="#">경제</a>
-                                <a href="#">쇼핑투데이</a>
-
+                                <a href="#" class="dot">언론사편집</a>
+                                <a href="#" class="slash">엔터</a>
+                                <a href="#" class="slash sports">스포츠<span class="sports-live">LIVE</span></a>
+                                <!-- .sports-live가 inline-block이라 "스포츠"에 딱 붙여야 화면에서 공간이 안 남는다. -->
+                                <a href="#" class="slash">경제</a>
+                                <a href="#" class="slash">쇼핑투데이</a>
                             </header>
                             <div id="main-newstand-gray">
                                 <a href="#">전체언론사</a>
