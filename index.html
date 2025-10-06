@@ -1090,7 +1090,111 @@
                 }
 
                 #main-newstand footer {
+                    border-top: 1px solid #00000014;
                     padding: 10px 0 11px;
+                    font-size: 1.3rem;
+                    line-height: 35px;
+                    font-weight: 600;
+                    color: #737373;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                    /* .list, .grid 의 기준점 */
+                }
+
+
+                /* 회색 테두리 원 구현 */
+                #main-newstand footer .prev,
+                #main-newstand footer .next {
+                    width: 36px;
+                    height: 36px;
+                    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .06);
+                    border: 1px solid #00000026;
+                    background-color: #FFFFFF;
+                    border-radius: 50%;
+                    vertical-align: top;
+                    cursor: pointer;
+                    /* 부모 요소 대비 자식 요소에게 가로세로 중앙 정렬 주기*/
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /*  */
+                }
+
+                /* > */
+                #main-newstand footer .prev::before,
+                #main-newstand footer .next::before {
+                    content: "";
+                    display: block;
+                    background-image: url('./sp_main.png');
+                    background-size: 468px 457px;
+                    background-position: -277px -420px;
+                    background-repeat: no-repeat;
+                    width: 12px;
+                    height: 12px;
+                }
+
+                /* < */
+                #main-newstand footer .prev::before {
+                    transform: rotate(180deg);
+                }
+
+                #main-newstand footer .text {
+                    padding: 0 16px;
+                    width: 156px;
+                }
+
+                #main-newstand footer .news {
+                    color: #406CDC;
+                }
+
+                #main-newstand footer .total {
+                    color: #A3A3A3;
+                }
+
+                #main-newstand footer .list,
+                #main-newstand footer .grid {
+                    position: absolute;
+                    border: none;
+                    cursor: pointer;
+                    top: 0;
+                    background-color: transparent;
+                }
+
+                #main-newstand footer .list {
+                    right: 49px;
+                    padding: 18px 9px 18px 20px;
+                }
+
+                #main-newstand footer .list::before {
+                    content: '';
+                    display: inline-block;
+                    background-image: url('./sp_main.png');
+                    background-size: 468px 457px;
+                    background-position: -218px -370px;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                #main-newstand footer .list:hover::before {
+                    background-position: -197px -370px;
+                }
+
+                #main-newstand footer .grid {
+                    right: 0;
+                    padding: 18px 20px 18px 9px;
+                }
+
+                #main-newstand footer .grid::before {
+                    content: '';
+                    display: inline-block;
+                    background-image: url('./sp_main.png');
+                    background-size: 468px 457px;
+                    background-position: -248px -397px;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
                 }
             </style>
             <main id="main">
@@ -1149,11 +1253,12 @@
                             </div>
                         </div>
                         <footer>
-                            <button><span class="blind">이전</span></button>
-                            <div>언론사 더보기 1/4</div>
-                            <button><span class="blind">다음</span></button>
-                            <button><span class="blind">목록보기</span></button>
-                            <button><span class="blind">격자보기</span></button>
+                            <button class="prev"><span class="blind">이전 페이지</span></button>
+                            <div class="text"><span class="news">언론사</span>&nbsp;더보기 1<span class="total">/4</span>
+                            </div>
+                            <button class="next"><span class="blind">다음 페이지</span></button>
+                            <button class="list"><span class="blind">목록보기</span></button>
+                            <button class="grid"><span class="blind">격자보기</span></button>
                         </footer>
                     </section>
                     <section id="main-shopping" class="mt-16"></section>
