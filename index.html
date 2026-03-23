@@ -1,178 +1,175 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <title>Naver</title>
-    <style>
-        /* 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Naver</title>
+  <style>
+    /* 
         ctrl + D : 하나씩 추가
         ctrl + shift + L : 전부 선택
         */
-    </style>
+  </style>
 </head>
 
 <body>
-    <div id="wrap">
-        <div id="wrap-center">
-            <div id="header">
-                <button id="header-hamburger">
-                    <!-- ::before -->
-                    <div></div>
-                    <div class="tooltip_box">바로가기</div>
-                    <span class="blind">확장 영역</span>
-                    <!-- ::after -->
-                </button>
-                <button id="header-naverpay">
-                    <!-- ::before -->
-                    <div></div>
-                    <div class="tooltip_box">네이버페이</div>
-                    <span class="blind">네이버 페이</span>
-                    <!-- ::after -->
-                </button>
-                <button id="header-navertalk">
-                    <!-- ::before -->
-                    <div></div>
-                    <div class="tooltip_box">네이버톡</div>
-                    <span class="blind">네이버 톡</span>
-                    <!-- ::after -->
-                </button>
-                <button id="header-notice">
-                    <!-- ::before -->
-                    <div></div>
-                    <div class="tooltip_box">알림</div>
-                    <span class="blind">알림</span>
-                    <!-- ::after -->
-                </button>
-                <button id="header-shopping">
-                    <!-- ::before -->
-                    <div></div>
-                    <div class="tooltip_box">장바구니</div>
-                    <span class="blind">네이버 쇼핑</span>
-                    <!-- ::after -->
-                </button>
-            </div>
-            <div id="search">
-                <form action="">
-                    <a id="search-svg" href="#">
-                        <!-- '#'은 현재 페이지의 최상단으로 이동하는 링크를 의미함 -->
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
-                        </svg>
-                        <!-- svg는 아무리 확대해도 깨지지 않는 이미지이다 -->
+  <div id="wrap">
+    <div id="wrap-center">
+      <div id="header">
+        <button id="header-hamburger">
+          <!-- ::before -->
+          <div></div>
+          <div class="tooltip_box">바로가기</div>
+          <span class="blind">확장 영역</span>
+          <!-- ::after -->
+        </button>
+        <button id="header-naverpay">
+          <!-- ::before -->
+          <div></div>
+          <div class="tooltip_box">네이버페이</div>
+          <span class="blind">네이버 페이</span>
+          <!-- ::after -->
+        </button>
+        <button id="header-navertalk">
+          <!-- ::before -->
+          <div></div>
+          <div class="tooltip_box">네이버톡</div>
+          <span class="blind">네이버 톡</span>
+          <!-- ::after -->
+        </button>
+        <button id="header-notice">
+          <!-- ::before -->
+          <div></div>
+          <div class="tooltip_box">알림</div>
+          <span class="blind">알림</span>
+          <!-- ::after -->
+        </button>
+        <button id="header-shopping">
+          <!-- ::before -->
+          <div></div>
+          <div class="tooltip_box">장바구니</div>
+          <span class="blind">네이버 쇼핑</span>
+          <!-- ::after -->
+        </button>
+      </div>
+      <div id="search">
+        <form action="">
+          <a id="search-svg" href="#">
+            <!-- '#'은 현재 페이지의 최상단으로 이동하는 링크를 의미함 -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
+            </svg>
+            <!-- svg는 아무리 확대해도 깨지지 않는 이미지이다 -->
 
-                    </a>
-                    <!-- inline-block의 문제점: a 태그 label 태그 input 태그 서로 붙이지 않고 enter로 줄 나누면 브라우저에서 약간의 공간이 남는다. -> flex로 해결하면 된다. -->
-                    <label for="search-input" class="blind">검색어 입력</label>
-                    <!-- form 태그 안에서 입력받고 label과 input 연결하면 좋다 -->
-                    <input id="search-input" type="text" placeholder="검색어를 입력하세요." />
-                    <div id="search-right">
-                        <button href="#" id="search-keyboard">
-                            <span class="blind">입력도구</span>
-                        </button>
-                        <button href="#" id="search-recent">
-                            <span class="blind">자동완성/최근검색어펼치기</span>
-                        </button>
-                        <button id="search-button">
-                            <!-- <div><span class="blind">검색</span></div> -->
-                            <svg id="search-btn" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
-                                style="fill: #03c75a">
-                                <path
-                                    d="M22.13.5c11.378 0 20.632 9.256 20.632 20.63 0 4.699-1.566 9.155-4.439 12.782l10.164 10.165a2.41 2.41 0 0 1-1.706 4.115 2.412 2.412 0 0 1-1.706-.705L33.31 35.719a2.41 2.41 0 0 1 0-3.41 15.71 15.71 0 0 0 4.628-11.178c0-8.718-7.09-15.808-15.807-15.808-8.718 0-15.808 7.09-15.808 15.808 0 7.15 4.817 13.43 11.714 15.273a2.41 2.41 0 0 1 1.705 2.954 2.41 2.41 0 0 1-2.95 1.705C7.788 38.658 1.5 30.46 1.5 21.131 1.5 9.756 10.756.5 22.13.5zm4.716 34.746a3.483 3.483 0 1 1 0 6.966 3.483 3.483 0 0 1 0-6.966z">
-                                </path>
-                            </svg>
-                            <span class="blind">검색</span>
+          </a>
+          <!-- inline-block의 문제점: a 태그 label 태그 input 태그 서로 붙이지 않고 enter로 줄 나누면 브라우저에서 약간의 공간이 남는다. -> flex로 해결하면 된다. -->
+          <label for="search-input" class="blind">검색어 입력</label>
+          <!-- form 태그 안에서 입력받고 label과 input 연결하면 좋다 -->
+          <input id="search-input" type="text" placeholder="검색어를 입력하세요." />
+          <div id="search-right">
+            <button href="#" id="search-keyboard">
+              <span class="blind">입력도구</span>
+            </button>
+            <button href="#" id="search-recent">
+              <span class="blind">자동완성/최근검색어펼치기</span>
+            </button>
+            <button id="search-button">
+              <!-- <div><span class="blind">검색</span></div> -->
+              <svg id="search-btn" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="fill: #03c75a">
+                <path
+                  d="M22.13.5c11.378 0 20.632 9.256 20.632 20.63 0 4.699-1.566 9.155-4.439 12.782l10.164 10.165a2.41 2.41 0 0 1-1.706 4.115 2.412 2.412 0 0 1-1.706-.705L33.31 35.719a2.41 2.41 0 0 1 0-3.41 15.71 15.71 0 0 0 4.628-11.178c0-8.718-7.09-15.808-15.807-15.808-8.718 0-15.808 7.09-15.808 15.808 0 7.15 4.817 13.43 11.714 15.273a2.41 2.41 0 0 1 1.705 2.954 2.41 2.41 0 0 1-2.95 1.705C7.788 38.658 1.5 30.46 1.5 21.131 1.5 9.756 10.756.5 22.13.5zm4.716 34.746a3.483 3.483 0 1 1 0 6.966 3.483 3.483 0 0 1 0-6.966z">
+                </path>
+              </svg>
+              <span class="blind">검색</span>
 
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>메일</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>카페</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>블로그</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>스토어</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>뉴스</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>증권</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>부동산</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>지도</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span>웹툰</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div><img
-                                    src="https://s.pstatic.net/static/www/mobile/edit/20240112_1095/upload_1705057885416AaxUM.png"
-                                    width="40" height="40" class="service_img" alt="치지직"></div>
-                            <span>치지직</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div></div>
-                            <span class="blind">더보기</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div><img
-                                    src="https://s.pstatic.net/static/www/mobile/edit/20240112_1095/upload_1705057885416AaxUM.png"
-                                    width="40" height="40" class="service_img" alt="치지직"></div>
-                            <span>경희사이버대학</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- 헤더와 메인 사이 광고 가끔생김 -->
-            <!-- <style>
+            </button>
+          </div>
+        </form>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="">
+              <div></div>
+              <span>메일</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>카페</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>블로그</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>스토어</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>뉴스</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>증권</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>부동산</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>지도</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span>웹툰</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div><img src="https://s.pstatic.net/static/www/mobile/edit/20240112_1095/upload_1705057885416AaxUM.png"
+                  width="40" height="40" class="service_img" alt="치지직"></div>
+              <span>치지직</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div></div>
+              <span class="blind">더보기</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div><img src="https://s.pstatic.net/static/www/mobile/edit/20240112_1095/upload_1705057885416AaxUM.png"
+                  width="40" height="40" class="service_img" alt="치지직"></div>
+              <span>경희사이버대학</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- 헤더와 메인 사이 광고 가끔생김 -->
+      <!-- <style>
                 #ad {
                     width: 1340px;
                     height: 150px;
@@ -181,775 +178,800 @@
             </>
             <div id="ad">
             </div> -->
-            <main id="main">
-                <div id="main-left">
-                    <!-- 광고 -->
-                    <aside id="main-left-ad"></aside>
-                    <section id="main-newstand" class="mt-16 left-section">
-                        <div id="main-newstand-top">
-                            <header>
-                                <a href="#" class="bold">뉴스스탠드</a>
-                                <a href="#" class="dot">언론사편집</a>
-                                <a href="#" class="slash">엔터</a>
-                                <a href="#" class="slash sports">스포츠<span class="sports-live">LIVE</span></a>
-                                <!-- .sports-live가 inline-block이라 "스포츠"에 딱 붙여야 화면에서 공간이 안 남는다. -->
-                                <a href="#" class="slash">경제</a>
-                                <a href="#" class="slash">쇼핑투데이</a>
-                            </header>
-                            <div id="main-newstand-gray">
-                                <div class="left">
-                                    <a href="#">전체언론사</a>
-                                    <div id="main-newstand-animation">
-                                        <a href="#">연합뉴스</a>
-                                        <a href="#">아이언맨 금일 한국 입국, 가평 계곡 여행 중 닭 백숙 먹고 매우 놀라워해 집에 가져가고 싶다고 말해</a>
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <a href="#">뉴스스탠드</a>
-                                    <a href="#" class="bold">뉴스홈</a>
-                                </div>
-                            </div>
-                            <div id="main-newstand-grid">
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                                <div>
-                                    <span>언론사</span>
-                                    <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <footer>
-                            <button class="prev"><span class="blind">이전 페이지</span></button>
-                            <div class="text"><span class="news">언론사</span>&nbsp;더보기 1<span class="total">/4</span>
-                            </div>
-                            <button class="next"><span class="blind">다음 페이지</span></button>
-                            <button class="list"><span class="blind">목록보기</span></button>
-                            <button class="grid"><span class="blind">격자보기</span></button>
-                        </footer>
-                    </section>
-                    <section id="main-shopping" class="mt-16 left-section">
-                        <div id="main-shopping-top">
-                            <header>
-                                <a href="#" class="bold">쇼핑</a>
-                                <a href="#" class="slash">맨즈</a>
-                                <a href="#" class="slash">브랜드샵</a>
-                                <a href="#" class="slash">추천핫딜</a>
-                                <a href="#" class="slash">MY추천</a>
-                                <a href="#" class="slash">쇼핑라이브</a>
-                                <div class="right">
-                                    <div class="pagination"><span>1</span><span class="total">/11</span>
-                                    </div>
-                                    <button class="prev"><i><span class="blind">이전페이지</span></i></button>
-                                    <button class="next"><i><span class="blind">다음페이지</span></i></button>
-                                </div>
-                            </header>
-                            <div id="main-shopping-grid">
-                                <div class="item">
-                                    <div id="shopping-group">
-                                        <div>
-                                            <a>쿠팡</a>
-                                            <span class="dot"></span>
-                                            <a>G마켓</a>
-                                            <span class="dot"></span>
-                                            <a>옥션</a>
-                                        </div>
-                                        <div>
-                                            <a>올리브영</a>
-                                            <span class="dot"></span>
-                                            <a>SSG닷컴</a>
-                                        </div>
-                                        <div>
-                                            <a>11번가</a>
-                                            <span class="dot"></span>
-                                            <a>이마트몰</a>
-                                        </div>
-                                        <div><a>하프클럽</a>
-                                            <span class="dot"></span>
-                                            <a><strong>GS SHOP</strong></a>
-                                        </div>
-                                        <div>
-                                            <a>패션플러스</a>
-                                            <span class="dot"></span>
-                                            <a>CJ온스타일</a>
-                                        </div>
-                                    </div>
-                                    <div id="shopping-utility">
-                                        <a>주문배송</a>
-                                        <a>장바구니</a>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="156" height="232"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion"><strong>빠른배송 EVENT!</strong></div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="#">
-                                        <div class="img-container"><img width="114" height="148"
-                                                alt="인기상품 10%↓ 봄신상 특가SALE" src="./sp_img1.jpg"></div>
-                                        <div class="item-promotion">르무통 특가!</div>
-                                        <div class="item-promotion">설빅세일 GET!</div>
-                                    </a>
-                                </div>
-                                <div class="item" id="main-shopping-gray">
-                                    <span>오늘의 혜택</span>
-                                    <a href="#" id="main-shopping-benefit">
-                                        <span><img height="13" alt="하프클럽"
-                                                src="https://s.pstatic.net/shopping.phinf/20240724_25/6831af3f-2264-43bf-9bde-cb528a97f1d5.jpg"></span>
-                                        <span id="main-benefit-des"><em>올리비아로렌</em> 겨울 시즌OFF, 봄 오픈! 놓칠 수 없는 특별
-                                            할인!</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <footer>
-                            <button class="prev"><span class="blind">이전 페이지</span></button>
-                            <div class="text"><span class="hot">쇼핑아이템</span>&nbsp;더보기 1<span class="total">/11</span>
-                            </div>
-                            <button class="next"><span class="blind">다음 페이지</span></button>
-                            <span class="ad">AD</span>
-                        </footer>
-                    </section>
-                    <!-- main-feed 부분만 newstand,shopping의 main-x-top 방식과 다르게 가봄 -->
-                    <section id="main-feed" class="mt-16 left-section">
-                        <header>
-                            <a href="#" class="bold">추천</a>
-                            <a href="#" class="slash">카테크</a>
-                            <a href="#" class="slash">웹툰</a>
-                            <a href="#" class="slash">패션뷰티</a>
-                            <a href="#" class="slash">리빙푸드</a>
-                            <a href="#" class="slash">책방</a>
-                            <a href="#" class="slash">지식</a>
-                            <a href="#" class="slash">건강</a>
-                            <a href="#" class="slash">게임</a>
-                            <a class="right">구독홈</a>
-                        </header>
-                        <div id="feed-area">
-                            <div id="feed-area-top">
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <a href="#">
-                                        <div class="img-container">
-                                            <img src="./contentImg.jpg" width="100%" height="120"
-                                                alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또" loading="lazy">
-                                        </div>
-                                        <div class="info">
-                                            <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
-                                                범죄드라마</strong>
-                                            <div class="source-box">
-                                                <span class="source">
-                                                    <span class="thumb"></span>
-                                                    <span class="name">레몬스카이</span>
-                                                </span>
-                                                <span class="category">인플루언서</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="feed-area-bottom">
-                                <div id="feed-title"><strong>매일 찾는 짧은 즐거움</strong></div>
-                                <div id="contents-container">
-                                    <div class="content">
-                                        <a href="#">
-                                            <div class="img-container">
-                                                <img src="./bottom_contentImg.jpg" width="100%" height="156"
-                                                    alt="다시 혼수해도 무조건 사는 2가지 살림템" loading="lazy">
-                                            </div>
-                                            <div class="info">
-                                                <strong class="title">명절 부침개는 이거! 맛살어묵전</strong>
-                                                <div class="source-box">
-                                                    <span class="name">문성실의 심플레시피</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="#">
-                                            <div class="img-container">
-                                                <img src="./bottom_contentImg.jpg" width="100%" height="156"
-                                                    alt="다시 혼수해도 무조건 사는 2가지 살림템" loading="lazy">
-                                            </div>
-                                            <div class="info">
-                                                <strong class="title">명절 부침개는 이거! 맛살어묵전</strong>
-                                                <div class="source-box">
-                                                    <span class="name">문성실의 심플레시피</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="#">
-                                            <div class="img-container">
-                                                <img src="./bottom_contentImg.jpg" width="100%" height="156"
-                                                    alt="다시 혼수해도 무조건 사는 2가지 살림템" loading="lazy">
-                                            </div>
-                                            <div class="info">
-                                                <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
-                                                <div class="source-box">
-                                                    <span class="name">어바웃타임 : the movie channel</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="#">
-                                            <div class="img-container">
-                                                <img src="./bottom_contentImg.jpg" width="100%" height="156"
-                                                    alt="다시 혼수해도 무조건 사는 2가지 살림템" loading="lazy">
-                                            </div>
-                                            <div class="info">
-                                                <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
-                                                <div class="source-box">
-                                                    <span class="name">어바웃타임 : the movie channel</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="#">
-                                            <div class="img-container">
-                                                <img src="./bottom_contentImg.jpg" width="100%" height="156"
-                                                    alt="다시 혼수해도 무조건 사는 2가지 살림템" loading="lazy">
-                                            </div>
-                                            <div class="info">
-                                                <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
-                                                <div class="source-box">
-                                                    <span class="name">어바웃타임 : the movie channel</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="#">
-                                            <div class="img-container">
-                                                <img src="./bottom_contentImg.jpg" width="100%" height="156"
-                                                    alt="다시 혼수해도 무조건 사는 2가지 살림템" loading="lazy">
-                                            </div>
-                                            <div class="info">
-                                                <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
-                                                <div class="source-box">
-                                                    <span class="name">어바웃타임 : the movie channel</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <footer id="feed-more-area"><button>펼쳐보기<i></i></button></footer>
-                    </section>
+      <main id="main">
+        <div id="main-left">
+          <!-- 광고 -->
+          <aside id="main-left-ad"></aside>
+          <section id="main-newstand" class="mt-16 left-section">
+            <div id="main-newstand-top">
+              <header>
+                <a href="#" class="bold">뉴스스탠드</a>
+                <a href="#" class="dot">언론사편집</a>
+                <a href="#" class="slash">엔터</a>
+                <a href="#" class="slash sports">스포츠<span class="sports-live">LIVE</span></a>
+                <!-- .sports-live가 inline-block이라 "스포츠"에 딱 붙여야 화면에서 공간이 안 남는다. -->
+                <a href="#" class="slash">경제</a>
+                <a href="#" class="slash">쇼핑투데이</a>
+              </header>
+              <div id="main-newstand-gray">
+                <div class="left">
+                  <a href="#">전체언론사</a>
+                  <div id="main-newstand-animation">
+                    <a href="#">연합뉴스</a>
+                    <a href="#">아이언맨 금일 한국 입국, 가평 계곡 여행 중 닭 백숙 먹고 매우 놀라워해 집에 가져가고 싶다고 말해</a>
+                  </div>
                 </div>
-                <div id="main-right">
-                    <section id="main-login">
-                        <div>네이버를 더 안전하고 편리하게 이용하세요</div>
-                        <a href="#" id="main-login-button"><i></i>로그인</a>
-                        <div>
-                            <a href="#">아이디 찾기</a>
-                            <a href="#">비밀번호 찾기</a>
-                            <a href="#">회원가입</a>
-                        </div>
-                    </section>
-                    <aside class="main-right-ad mt-16"></aside>
-                    <aside class="main-right-ad mt-16"></aside>
-                    <aside class="recoShoppingView mt-16"></aside>
-                    <section id="main-weather" class="main-weather-and-stock mt-16">
-                        <header>날씨</header>
-                        <div></div>
-                    </section>
-                    <section id="main-stock" class="main-weather-and-stock mt-16">
-                        <header>증시</header>
-                        <div></div>
-                    </section>
-                    <aside class="main-right-ad mt-16"></aside>
-                    <section id="main-widget" class="mt-16"></section>
-                    <aside class="main-right-ad mt-16"></aside>
+                <div class="right">
+                  <a href="#">뉴스스탠드</a>
+                  <a href="#" class="bold">뉴스홈</a>
                 </div>
-            </main>
-        </div>
-        <footer id="footer">
-            <div id="footer-inner">
-                <div id="nbanner-area">
-                    <div class="public">
-                        <a href="#">
-                            <div class="img-container">
-                                <img src="./nbanner_img.png" width="160" height="100" alt="광고 이미지">
-                            </div>
-                            <div class="info">
-                                <strong class="sub-title">네이버</strong>
-                                <strong class="title">컬리N마트</strong>
-                                <div class="source-box">
-                                    <span class="desc">네이버에서 컬리를</span>
-                                    <span class="desc">멤버십 2만원 이상 무료배송</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="public">
-                        <a href="#">
-                            <div class="img-container">
-                                <img src="./nbanner_img.png" width="160" height="100" alt="광고 이미지">
-                            </div>
-                            <div class="info">
-                                <strong class="sub-title">네이버</strong>
-                                <strong class="title">컬리N마트</strong>
-                                <div class="source-box">
-                                    <span class="desc">네이버에서 컬리를</span>
-                                    <span class="desc">멤버십 2만원 이상 무료배송</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="public">
-                        <a href="#">
-                            <div class="img-container">
-                                <img src="./nbanner_img.png" width="160" height="100" alt="광고 이미지">
-                            </div>
-                            <div class="info">
-                                <strong class="sub-title">네이버</strong>
-                                <strong class="title">컬리N마트</strong>
-                                <div class="source-box">
-                                    <span class="desc">네이버에서 컬리를</span>
-                                    <span class="desc">멤버십 2만원 이상 무료배송</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+              </div>
+              <div id="main-newstand-grid">
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
                 </div>
-                <div id="notice-area">
-                    <a>공지사항</a>
-                    <a class="link-all">서비스 전체보기</a>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
                 </div>
-                <div id="aside-area">
-                    <div class="partner_box_wrap">
-                        <div class="partner_box">
-                            <span class="title">Partners</span>
-                            <a>네이버 임팩트</a>
-                            <a>네이버 비즈니스</a>
-                            <a>네이버 비즈니스 스쿨</a>
-                            <a>네이버 광고 등록</a>
-                            <a>스토어 개설</a>
-                            <a>지역업체 등록</a>
-                            <a>엑스퍼트 등록</a>
-                        </div>
-                        <div class="partner_box">
-                            <span class="title">Developers</span>
-                            <a>네이버 개발자 센터</a>
-                            <a>오픈 API</a>
-                            <a>오픈소스</a>
-                            <a>네이버 D2</a>
-                            <a>네이버 D2SF</a>
-                            <a>네이버 랩스</a>
-                        </div>
-                    </div>
-                    <div class="service-box-wrap">
-                        <div class="service-box">
-                            <div class="service-info">
-                                <strong class="title">웨일 브라우저</strong>
-                                <a class="desc" href="#">이용안내</a>
-                            </div>
-                            <a href="#"><img
-                                    src="data:image/png;base64,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"
-                                    alt="웨일 브라우저" width="48" height="48"></a>
-                        </div>
-                        <div class="service-box">
-                            <div class="service-info">
-                                <strong class="title">기업 사이트</strong>
-                                <a class="desc" href="#">바로가기</a>
-                            </div>
-                            <a href="#"><img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAIVBMVEUAAAD///+QkJBhYWFSUlItLS3j4+O8vLxKSkr09PR9fX3vnz0hAAAA0UlEQVRYw+3WsQ7BUBSA4Ru0TWyXuMXEG5BiJhZjxWRr4wV4A4MXMNh5U/RWmPT8c8+/nJykX3K73FxjNE3T6t0ueTcrt6DYkvkfMLZFZ7+1/NapBhkFMQV2QsGNgpgCe6egR4GjwI4o6FPgKLBHCroUDFIIXmeCYEiBTSnI5CD3H8rBwo+LGGz8OIjB0k8nB+Hvz0tAQIF5UBBREFwhMFMKIgpMTsGKggYF3zNJwZaCNgXmRMGegiYFnzPJQUiB4NbwT4ckLdd15dNB0zStDj0B379JDVnibr4AAAAASUVORK5CYII="
-                                    alt="기업 사이트" width="48" height="48"></a>
-                        </div>
-                    </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
                 </div>
-                <div id="corp-area">
-                    <a>회사소개</a>
-                    <a>인재채용</a>
-                    <a>제휴제안</a>
-                    <a>이용약관</a>
-                    <a><strong>개인정보처리방침</strong></a>
-                    <a>청소년보호정책</a>
-                    <a>네이버 정책</a>
-                    <a>고객센터</a>
-                    <a><strong>ⓒ NAVER Corp.</strong></a>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
                 </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+                <div>
+                  <span>언론사</span>
+                  <div class="news-grid-back"><a>구독</a><a>기사보기</a></div>
+                </div>
+              </div>
             </div>
-        </footer>
+            <footer>
+              <button class="prev"><span class="blind">이전 페이지</span></button>
+              <div class="text"><span class="news">언론사</span>&nbsp;더보기 1<span class="total">/4</span>
+              </div>
+              <button class="next"><span class="blind">다음 페이지</span></button>
+              <button class="list"><span class="blind">목록보기</span></button>
+              <button class="grid"><span class="blind">격자보기</span></button>
+            </footer>
+          </section>
+          <section id="main-shopping" class="mt-16 left-section">
+            <div id="main-shopping-top">
+              <header>
+                <a href="#" class="bold">쇼핑</a>
+                <a href="#" class="slash">맨즈</a>
+                <a href="#" class="slash">브랜드샵</a>
+                <a href="#" class="slash">추천핫딜</a>
+                <a href="#" class="slash">MY추천</a>
+                <a href="#" class="slash">쇼핑라이브</a>
+                <div class="right">
+                  <div class="pagination"><span>1</span><span class="total">/11</span>
+                  </div>
+                  <button class="prev"><i><span class="blind">이전페이지</span></i></button>
+                  <button class="next"><i><span class="blind">다음페이지</span></i></button>
+                </div>
+              </header>
+              <div id="main-shopping-grid">
+                <div class="item">
+                  <div id="shopping-group">
+                    <div>
+                      <a>쿠팡</a>
+                      <span class="dot"></span>
+                      <a>G마켓</a>
+                      <span class="dot"></span>
+                      <a>옥션</a>
+                    </div>
+                    <div>
+                      <a>올리브영</a>
+                      <span class="dot"></span>
+                      <a>SSG닷컴</a>
+                    </div>
+                    <div>
+                      <a>11번가</a>
+                      <span class="dot"></span>
+                      <a>이마트몰</a>
+                    </div>
+                    <div><a>하프클럽</a>
+                      <span class="dot"></span>
+                      <a><strong>GS SHOP</strong></a>
+                    </div>
+                    <div>
+                      <a>패션플러스</a>
+                      <span class="dot"></span>
+                      <a>CJ온스타일</a>
+                    </div>
+                  </div>
+                  <div id="shopping-utility">
+                    <a>주문배송</a>
+                    <a>장바구니</a>
+                  </div>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="156" height="232" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion"><strong>빠른배송 EVENT!</strong></div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="#">
+                    <div class="img-container"><img width="114" height="148" alt="인기상품 10%↓ 봄신상 특가SALE"
+                        src="./sp_img1.jpg"></div>
+                    <div class="item-promotion">르무통 특가!</div>
+                    <div class="item-promotion">설빅세일 GET!</div>
+                  </a>
+                </div>
+                <div class="item" id="main-shopping-gray">
+                  <span>오늘의 혜택</span>
+                  <a href="#" id="main-shopping-benefit">
+                    <span><img height="13" alt="하프클럽"
+                        src="https://s.pstatic.net/shopping.phinf/20240724_25/6831af3f-2264-43bf-9bde-cb528a97f1d5.jpg"></span>
+                    <span id="main-benefit-des"><em>올리비아로렌</em> 겨울 시즌OFF, 봄 오픈! 놓칠 수 없는 특별
+                      할인!</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <footer>
+              <button class="prev"><span class="blind">이전 페이지</span></button>
+              <div class="text"><span class="hot">쇼핑아이템</span>&nbsp;더보기 1<span class="total">/11</span>
+              </div>
+              <button class="next"><span class="blind">다음 페이지</span></button>
+              <span class="ad">AD</span>
+            </footer>
+          </section>
+          <!-- main-feed 부분만 newstand,shopping의 main-x-top 방식과 다르게 가봄 -->
+          <section id="main-feed" class="mt-16 left-section">
+            <header>
+              <a href="#" class="bold">추천</a>
+              <a href="#" class="slash">카테크</a>
+              <a href="#" class="slash">웹툰</a>
+              <a href="#" class="slash">패션뷰티</a>
+              <a href="#" class="slash">리빙푸드</a>
+              <a href="#" class="slash">책방</a>
+              <a href="#" class="slash">지식</a>
+              <a href="#" class="slash">건강</a>
+              <a href="#" class="slash">게임</a>
+              <a class="right">구독홈</a>
+            </header>
+            <div id="feed-area">
+              <div id="feed-area-top">
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="content">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="./contentImg.jpg" width="100%" height="120" alt="고단백, 저칼로리로 즐기는 안동 콩 100% 낫또"
+                        loading="lazy">
+                    </div>
+                    <div class="info">
+                      <strong class="title">레이디 두아 3화 줄거리 목가희 투신 이유 저수지 속 백골 반전 넷플릭스 한국
+                        범죄드라마</strong>
+                      <div class="source-box">
+                        <span class="source">
+                          <span class="thumb"></span>
+                          <span class="name">레몬스카이</span>
+                        </span>
+                        <span class="category">인플루언서</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div id="feed-area-bottom">
+                <div id="feed-title"><strong>매일 찾는 짧은 즐거움</strong></div>
+                <div id="contents-container">
+                  <div class="content">
+                    <a href="#">
+                      <div class="img-container">
+                        <img src="./bottom_contentImg.jpg" width="100%" height="156" alt="다시 혼수해도 무조건 사는 2가지 살림템"
+                          loading="lazy">
+                      </div>
+                      <div class="info">
+                        <strong class="title">명절 부침개는 이거! 맛살어묵전</strong>
+                        <div class="source-box">
+                          <span class="name">문성실의 심플레시피</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="content">
+                    <a href="#">
+                      <div class="img-container">
+                        <img src="./bottom_contentImg.jpg" width="100%" height="156" alt="다시 혼수해도 무조건 사는 2가지 살림템"
+                          loading="lazy">
+                      </div>
+                      <div class="info">
+                        <strong class="title">명절 부침개는 이거! 맛살어묵전</strong>
+                        <div class="source-box">
+                          <span class="name">문성실의 심플레시피</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="content">
+                    <a href="#">
+                      <div class="img-container">
+                        <img src="./bottom_contentImg.jpg" width="100%" height="156" alt="다시 혼수해도 무조건 사는 2가지 살림템"
+                          loading="lazy">
+                      </div>
+                      <div class="info">
+                        <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
+                        <div class="source-box">
+                          <span class="name">어바웃타임 : the movie channel</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="content">
+                    <a href="#">
+                      <div class="img-container">
+                        <img src="./bottom_contentImg.jpg" width="100%" height="156" alt="다시 혼수해도 무조건 사는 2가지 살림템"
+                          loading="lazy">
+                      </div>
+                      <div class="info">
+                        <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
+                        <div class="source-box">
+                          <span class="name">어바웃타임 : the movie channel</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="content">
+                    <a href="#">
+                      <div class="img-container">
+                        <img src="./bottom_contentImg.jpg" width="100%" height="156" alt="다시 혼수해도 무조건 사는 2가지 살림템"
+                          loading="lazy">
+                      </div>
+                      <div class="info">
+                        <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
+                        <div class="source-box">
+                          <span class="name">어바웃타임 : the movie channel</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="content">
+                    <a href="#">
+                      <div class="img-container">
+                        <img src="./bottom_contentImg.jpg" width="100%" height="156" alt="다시 혼수해도 무조건 사는 2가지 살림템"
+                          loading="lazy">
+                      </div>
+                      <div class="info">
+                        <strong class="title">명품 백을 구토용 봉투로 제공한 사연</strong>
+                        <div class="source-box">
+                          <span class="name">어바웃타임 : the movie channel</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer id="feed-more-area"><button>펼쳐보기<i></i></button></footer>
+          </section>
+        </div>
+        <div id="main-right">
+          <section id="main-login">
+            <div>네이버를 더 안전하고 편리하게 이용하세요</div>
+            <a href="#" id="main-login-button"><i></i>로그인</a>
+            <div>
+              <a href="#">아이디 찾기</a>
+              <a href="#">비밀번호 찾기</a>
+              <a href="#">회원가입</a>
+            </div>
+          </section>
+          <aside class="main-right-ad adboard mt-16">
+            <a href="#">
+              <strong class="ab-title">초호화 별장 회원권, 모자이크</strong>
+              <div class="ab-product-area">
+                <div class="ab-product-img"></div>
+                <div class="ab-product-text-area">
+                  <p class="ab-product-text">신규 별장 클리프 오픈! 야외 수영장+야외 다이닝</p>
+                </div>
+              </div>
+              <div class="ab-footer">
+                <div class="ab-brand-logo">
+                  <img
+                    src="https://naverpa-phinf.pstatic.net/MjAyNjAzMTJfNjMg/MDAxNzczMjc4MDM5MjM2.i0BWetfUzGKKrLd7hUYQk6PGFQL6jWufRA6iS2yIn1cg.2DQAeJKbktb3M9IPbhE4DXqu50PXpUzkQoJR1z63E1wg.JPEG/KIMES_2026_%EC%9B%B9%EB%B0%B0%EB%84%88_%EB%84%A4%EC%9D%B4%EB%B2%84_GFA_300x300_177327803922512441588376043312619.jpg"
+                    width="22" height="22" alt="광고 이미지">
+                  <!-- <img>처럼 '닫는 태그'가 없는 단일태그에는 가상요소를 사용할 수 없다.-->
+                </div>
+                <div class="ab-brand-name">밀알복지재단</div>
+                <div class="ab-more-text">더 알아보기</div>
+                <svg class="ab-brand-arrow" width="6" height="11" viewBox="0 0 6 11" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.5" d="M0.75 1.25L4.75 5.75L0.75 10.25" stroke="currentColor" stroke-linecap="round">
+                  </path>
+                </svg>
+              </div>
+            </a>
+          </aside>
+          <aside class="main-right-ad mt-16"></aside>
+          <aside class="recoShoppingView mt-16"></aside>
+          <section id="main-weather" class="main-weather-and-stock mt-16">
+            <header>날씨</header>
+            <div></div>
+          </section>
+          <section id="main-stock" class="main-weather-and-stock mt-16">
+            <header>증시</header>
+            <div></div>
+          </section>
+          <aside class="main-right-ad mt-16"></aside>
+          <section id="main-widget" class="mt-16"></section>
+          <aside class="main-right-ad mt-16"></aside>
+        </div>
+      </main>
     </div>
+    <footer id="footer">
+      <div id="footer-inner">
+        <div id="nbanner-area">
+          <div class="public">
+            <a href="#">
+              <div class="img-container">
+                <img src="./nbanner_img.png" width="160" height="100" alt="광고 이미지">
+              </div>
+              <div class="info">
+                <strong class="sub-title">네이버</strong>
+                <strong class="title">컬리N마트</strong>
+                <div class="source-box">
+                  <span class="desc">네이버에서 컬리를</span>
+                  <span class="desc">멤버십 2만원 이상 무료배송</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="public">
+            <a href="#">
+              <div class="img-container">
+                <img src="./nbanner_img.png" width="160" height="100" alt="광고 이미지">
+              </div>
+              <div class="info">
+                <strong class="sub-title">네이버</strong>
+                <strong class="title">컬리N마트</strong>
+                <div class="source-box">
+                  <span class="desc">네이버에서 컬리를</span>
+                  <span class="desc">멤버십 2만원 이상 무료배송</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="public">
+            <a href="#">
+              <div class="img-container">
+                <img src="./nbanner_img.png" width="160" height="100" alt="광고 이미지">
+              </div>
+              <div class="info">
+                <strong class="sub-title">네이버</strong>
+                <strong class="title">컬리N마트</strong>
+                <div class="source-box">
+                  <span class="desc">네이버에서 컬리를</span>
+                  <span class="desc">멤버십 2만원 이상 무료배송</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="notice-area">
+          <a>공지사항</a>
+          <a class="link-all">서비스 전체보기</a>
+        </div>
+        <div id="aside-area">
+          <div class="partner_box_wrap">
+            <div class="partner_box">
+              <span class="title">Partners</span>
+              <a>네이버 임팩트</a>
+              <a>네이버 비즈니스</a>
+              <a>네이버 비즈니스 스쿨</a>
+              <a>네이버 광고 등록</a>
+              <a>스토어 개설</a>
+              <a>지역업체 등록</a>
+              <a>엑스퍼트 등록</a>
+            </div>
+            <div class="partner_box">
+              <span class="title">Developers</span>
+              <a>네이버 개발자 센터</a>
+              <a>오픈 API</a>
+              <a>오픈소스</a>
+              <a>네이버 D2</a>
+              <a>네이버 D2SF</a>
+              <a>네이버 랩스</a>
+            </div>
+          </div>
+          <div class="service-box-wrap">
+            <div class="service-box">
+              <div class="service-info">
+                <strong class="title">웨일 브라우저</strong>
+                <a class="desc" href="#">이용안내</a>
+              </div>
+              <a href="#"><img
+                  src="data:image/png;base64,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"
+                  alt="웨일 브라우저" width="48" height="48"></a>
+            </div>
+            <div class="service-box">
+              <div class="service-info">
+                <strong class="title">기업 사이트</strong>
+                <a class="desc" href="#">바로가기</a>
+              </div>
+              <a href="#"><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAIVBMVEUAAAD///+QkJBhYWFSUlItLS3j4+O8vLxKSkr09PR9fX3vnz0hAAAA0UlEQVRYw+3WsQ7BUBSA4Ru0TWyXuMXEG5BiJhZjxWRr4wV4A4MXMNh5U/RWmPT8c8+/nJykX3K73FxjNE3T6t0ueTcrt6DYkvkfMLZFZ7+1/NapBhkFMQV2QsGNgpgCe6egR4GjwI4o6FPgKLBHCroUDFIIXmeCYEiBTSnI5CD3H8rBwo+LGGz8OIjB0k8nB+Hvz0tAQIF5UBBREFwhMFMKIgpMTsGKggYF3zNJwZaCNgXmRMGegiYFnzPJQUiB4NbwT4ckLdd15dNB0zStDj0B379JDVnibr4AAAAASUVORK5CYII="
+                  alt="기업 사이트" width="48" height="48"></a>
+            </div>
+          </div>
+        </div>
+        <div id="corp-area">
+          <a>회사소개</a>
+          <a>인재채용</a>
+          <a>제휴제안</a>
+          <a>이용약관</a>
+          <a><strong>개인정보처리방침</strong></a>
+          <a>청소년보호정책</a>
+          <a>네이버 정책</a>
+          <a>고객센터</a>
+          <a><strong>ⓒ NAVER Corp.</strong></a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 
 </html>
